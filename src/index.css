@@ -24,7 +24,6 @@
 	--dark-very-dark-grayish-blue-hover: #38394d;
 }
 
-
 * {
 	margin: 0;
 	padding: 0;
@@ -36,5 +35,5 @@ html {
 }
 
 body {
-	background-color: #fff;
+	background-color: var(--dark-very-dark-blue);
 }
