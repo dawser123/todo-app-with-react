@@ -1,22 +1,22 @@
 import React from 'react'
-
+import ToDo from './ToDo'
 import classes from './Header.module.css'
 import Moon from '../assets/Icons/Moon.svg'
+import Input from './Input'
 const Header = () => {
 	return (
 		<header>
 			<div className={classes.container}>
 				<h1>
 					TODO
-					<img className={classes.icon} src={Moon} />
+					<button>
+						<img className={classes.icon} src={Moon} />
+					</button>
 				</h1>
-				<div className={classes['input-container']}>
-					<label htmlFor="input"></label>
-					<input id="input" type="text" placeholder="Create a new todo..." />
-				</div>
+				<Input />
+				<ToDo />
 			</div>
 		</header>
 	)
 }
-
 export default Header

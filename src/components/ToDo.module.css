@@ -1,0 +1,90 @@
+ul {
+	margin: 1em 0;
+}
+
+li {
+	display: flex;
+	align-items: center;
+	padding: 1em 0;
+	background-color: var(--light-very-light-gray);
+	list-style: none;
+	border-radius: 6px 6px 0 0;
+	color: var(--light-dark-grayish-blue);
+	border-bottom: 1px solid var(--light-light-grayish-blue);
+}
+.todo-check {
+	margin: 0 0.7em;
+	background-color: transparent;
+	border: 1px solid var(--light-dark-grayish-blue);
+	width: 1.3em;
+	height: 1.3em;
+	border-radius: 50%;
+	cursor: pointer;
+}
+button {
+	background: none;
+	border: none;
+	cursor: pointer;
+}
+.cross-button {
+	margin: 0 1em 0 auto;
+}
+.clear-button {
+	color: var(--light-dark-grayish-blue);
+}
+
+.check-img {
+	margin: 0.3em 0.3em;
+}
+
+.todo-check-active {
+	background: linear-gradient(#57ddff, #c058f3);
+}
+.todo-list-container {
+	display: flex;
+	justify-content: space-between;
+	padding: 1em;
+	border-radius: 0 0 6px 6px;
+	background-color: #fff;
+	color: var(--light-dark-grayish-blue);
+}
+
+.todo-status-box {
+	display: flex;
+	justify-content: space-around;
+	margin-top: 1rem;
+	padding: 1rem;
+	font-weight: 700;
+	border-radius: 6px;
+	background-color: var(--light-very-light-gray);
+}
+
+.todo-status-box-btn {
+	color: var(--light-dark-grayish-blue);
+	font-weight: 700;
+}
+.todo-status-box-btn.active {
+	color: var(--primary-blue);
+}
+
+@media (max-width: 768px) {
+	.todo-list-container .todo-status-box {
+		display: none;
+	}
+	.todo-status-box {
+		display: flex;
+	}
+}
+@media (min-width: 768px) {
+	.todo-list-container .todo-status-box {
+		display: flex;
+		margin-top: 0;
+		padding: 0;
+	}
+	.todo-status-box-btn {
+		padding: 0 0.8em;
+	}
+	.todo-status-box {
+		display: none;
+	}
+}

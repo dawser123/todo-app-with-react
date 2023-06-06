@@ -19,21 +19,21 @@ header {
 	padding: 2.5em;
 	top: 0;
 	max-width: 600px;
-	width: 100%; 
+	width: 100%;
 }
 .input-container {
 	position: relative;
 	display: flex;
 }
-
 .input-container input {
 	width: 100%;
 	margin: 2em 0;
 	padding: 1em 3em;
+	color: var(--light-dark-grayish-blue);
+	background-color: var(--light-very-light-gray);
 	border-radius: 6px;
 	border: none;
 }
-
 .input-container label {
 	position: absolute;
 	display: flex;

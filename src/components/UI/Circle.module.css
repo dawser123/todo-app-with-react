@@ -1,0 +1,9 @@
+.todo-check {
+	margin: 0 0.8em;
+	/* background: transparent; */
+	border: 1px solid var(--light-dark-grayish-blue);
+	width: 1.3em;
+	height: 1.3em;
+	border-radius: 50%;
+	cursor: pointer;
+}
