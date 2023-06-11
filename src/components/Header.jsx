@@ -1,20 +1,20 @@
-import React from 'react'
 import ToDo from './ToDo'
 import classes from './Header.module.css'
 import Moon from '../assets/Icons/Moon.svg'
+import Sun from '../assets/Icons/Sun.svg'
 import Input from './Input'
-const Header = () => {
+const Header = props => {
 	return (
-		<header>
+		<header className={props.theme === 'dark'? classes.dark : ''}>
 			<div className={classes.container}>
 				<h1>
 					TODO
-					<button>
-						<img className={classes.icon} src={Moon} />
+					<button onClick={props.toggleTheme}>
+						<img className={classes.icon} src={props.theme === 'light' ? Moon : Sun} alt="Theme" />
 					</button>
 				</h1>
 				<Input />
-				<ToDo />
+				<ToDo theme={props.theme} />
 			</div>
 		</header>
 	)

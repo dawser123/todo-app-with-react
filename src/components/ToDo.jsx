@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import classes from './ToDo.module.css'
-import Cross from '../assets/Icons/Cross.svg'
 import Circle from './UI/Circle'
+import Cross from '../assets/Icons/Cross.svg'
 import Check from '../assets/Icons/Check.svg'
 
-const ToDo = () => {
+const ToDo = props => {
 	const [check, isCheck] = useState(false)
 	const [activeButton, setActiveButton] = useState('')
 
@@ -19,11 +19,11 @@ const ToDo = () => {
 	return (
 		<>
 			<ul>
-				<li>
+				<li className={check ? classes['todo-check-checked'] : ''}>
 					<Circle onClick={clickCheckActive} className={check ? classes['todo-check-active'] : ''}>
-						<img className={classes['check-img']} src={Check} alt="Check" />
+						<img className={`${classes['check-img']} ${check ? classes['todo-check-active-img'] : ''}`} src={Check} />
 					</Circle>
-					asd
+					asdasda
 					<button type="button" className={classes['cross-button']}>
 						<img src={Cross} alt="Cross" />
 					</button>
@@ -51,24 +51,26 @@ const ToDo = () => {
 						Clear completed
 					</button>
 				</div>
-				<div className={classes['todo-status-box']}>
-					<button
-						className={`${classes['todo-status-box-btn']} ${activeButton === 'all' ? classes.active : ''}`}
-						onClick={() => handleButtonClick('all')}>
-						All
-					</button>
-					<button
-						className={`${classes['todo-status-box-btn']} ${activeButton === 'active' ? classes.active : ''}`}
-						onClick={() => handleButtonClick('active')}>
-						Active
-					</button>
-					<button
-						className={`${classes['todo-status-box-btn']} ${activeButton === 'completed' ? classes.active : ''}`}
-						onClick={() => handleButtonClick('completed')}>
-						Completed
-					</button>
-				</div>
 			</ul>
+			<div className={classes['todo-status-box']}>
+				<button
+					className={`${classes['todo-status-box-btn']} ${activeButton === 'all' ? classes.active : ''}`}
+					onClick={() => handleButtonClick('all')}>
+					All
+				</button>
+				<button
+					className={`${classes['todo-status-box-btn']} ${activeButton === 'active' ? classes.active : ''}`}
+					onClick={() => handleButtonClick('active')}>
+					Active
+				</button>
+				<button
+					className={`${classes['todo-status-box-btn']} ${activeButton === 'completed' ? classes.active : ''}`}
+					onClick={() => handleButtonClick('completed')}>
+					Completed
+				</button>
+			</div>
+
+			<p className={classes['drag-text']}>Drag and drop to reorder list</p>
 		</>
 	)
 }

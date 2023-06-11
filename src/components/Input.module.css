@@ -1,9 +1,9 @@
-.div {
+.container{
     margin: 2.5em 0 0em 0;
 	display: flex;
 	align-items: center;
 	border-radius: 6px;
-	background-color: white;
+	background-color: var(--background);
 }
 
 input {
@@ -12,6 +12,7 @@ input {
 	border-radius: 12px;
 	outline: none;
 	border: none;
+	background-color: var(--background);
 	color: var(--light-dark-grayish-blue);
 }
 input::placeholder {

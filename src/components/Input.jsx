@@ -1,9 +1,10 @@
 import React from 'react'
 import Circle from './UI/Circle'
 import classes from './Input.module.css'
+
 const Input = () => {
 	return (
-		<div className={classes.div}>
+		<div className={classes.container}>
 			<label htmlFor="input">
 				<Circle />
 			</label>
