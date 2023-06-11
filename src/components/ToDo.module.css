@@ -99,5 +99,6 @@ button {
 	}
 	.todo-status-box {
 		display: none;
+		box-shadow: none
 	}
 }
