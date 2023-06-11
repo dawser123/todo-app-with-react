@@ -5,7 +5,7 @@ import Sun from '../assets/Icons/Sun.svg'
 import Input from './Input'
 const Header = props => {
 	return (
-		<header className={props.theme === 'dark'? classes.dark : ''}>
+		<header className={props.theme === 'dark' ? classes.dark : ''}>
 			<div className={classes.container}>
 				<h1>
 					TODO

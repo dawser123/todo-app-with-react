@@ -7,5 +7,4 @@ const Circle = props => {
 		</div>
 	)
 }
-
-export default Circle
+ export default Circle

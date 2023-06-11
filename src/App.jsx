@@ -5,18 +5,14 @@ import classes from './App.module.css'
 function App() {
 	const defaultDark = window.matchMedia('(prefers-color-scheme:dark)').matches
 	const [theme, setTheme] = useLocalStorage('theme', defaultDark ? 'dark' : 'light')
-
-	const appClasses = `${classes.app} ${theme === 'dark' ? classes.dark : ''}`
-
-	const toggleTheme = () => {
+ 	const appClasses = `${classes.app} ${theme === 'dark' ? classes.dark : ''}`
+ 	const toggleTheme = () => {
 		setTheme(prevTheme => (prevTheme === 'light' ? 'dark' : 'light'))
 	}
-
-	return (
+ 	return (
 		<div className={appClasses} data-theme={theme}>
 			<Header theme={theme} toggleTheme={toggleTheme} />
 		</div>
 	)
 }
-
-export default App
+ export default App

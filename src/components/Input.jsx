@@ -1,8 +1,7 @@
 import React from 'react'
 import Circle from './UI/Circle'
 import classes from './Input.module.css'
-
-const Input = () => {
+ const Input = () => {
 	return (
 		<div className={classes.container}>
 			<label htmlFor="input">
@@ -12,5 +11,4 @@ const Input = () => {
 		</div>
 	)
 }
-
-export default Input
+ export default Input
