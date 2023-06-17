@@ -1,17 +1,19 @@
 import React, { useState } from 'react'
-const Button = props => {
+import classes from './Button.module.css'
+const Button = ({ onButtonClick, className, activeClassName }) => {
 	const [activeButton, setActiveButton] = useState('All')
 	const buttonNames = ['All', 'Active', 'Completed']
 	const handleButtonClick = buttonName => {
 		setActiveButton(buttonName)
+		onButtonClick(buttonName)
 	}
 	return (
-		<div className={props.className}>
+		<div className={className}>
 			{buttonNames.map(buttonName => (
 				<button
 					onClick={() => handleButtonClick(buttonName)}
 					key={buttonName}
-					className={`${props.className} ${activeButton === buttonName ? props.activeClassName : ''}`}>
+					className={`${className} ${activeButton === buttonName ? classes.active : ''}`}>
 					{buttonName}
 				</button>
 			))}

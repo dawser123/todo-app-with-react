@@ -3,7 +3,7 @@
 	--primary-check-background: linear-gradient(#57ddff, #c058f3);
 	--primary-blue: #3a7bfd;
 }
- :root {
+:root {
 	--background: #fafafa;
 	--border: #e4e5f1;
 	--light-very-light-grayish-blue: #e4e5f1;
@@ -11,7 +11,7 @@
 	--light-dark-grayish-blue: #9394a5;
 	--light-very-dark-grayish-blue: #484b6a;
 }
- [data-theme='dark'] {
+[data-theme='dark'] {
 	--dark-very-dark-blue: #161722;
 	--background: #25273c;
 	--border: #4d5066;
@@ -21,11 +21,17 @@
 	--dark-very-dark-grayish-blue: #4d5066;
 	--dark-very-dark-grayish-blue-hover: #38394d;
 }
- * {
+* {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 }
- html {
+html {
 	font-family: 'Josefin Sans', sans-serif;
+}
+button {
+	background: none;
+	border: none;
+	font-weight: 700;
+	cursor: pointer;
 }

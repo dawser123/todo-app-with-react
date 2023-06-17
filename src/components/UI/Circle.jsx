@@ -1,10 +1,10 @@
 import React from 'react'
 import classes from './Circle.module.css'
-const Circle = props => {
+const Circle = ({className,onClick,children}) => {
 	return (
-		<div className={`${classes['todo-check']} ${props.className}`} onClick={props.onClick}>
-			{props.children}
+		<div className={`${classes['todo-check']} ${className}`} onClick={onClick}>
+			{children}
 		</div>
 	)
 }
- export default Circle
+export default Circle
