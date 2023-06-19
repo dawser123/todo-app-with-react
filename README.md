@@ -28,8 +28,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/dawser123/todo-app-with-react)
-- Live Site URL: [Add live site URL here](https://dawser123.github.io/todo-app-with-react/)
+- Solution URL: [solution URL here](https://github.com/dawser123/todo-app-with-react)
+- Live Site URL: [live site URL here](https://dawser123.github.io/todo-app-with-react/)
 
 ### Built with
 
