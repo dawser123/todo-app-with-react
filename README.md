@@ -6,15 +6,10 @@ This is a solution to the [Todo app challenge on Frontend Mentor](https://www.fr
 
 - [Overview](#overview)
   - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
   - [Links](#links)
-- [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
 
 ## Overview
 
@@ -35,8 +30,6 @@ Users should be able to:
 
 - Solution URL: [Add solution URL here](https://github.com/dawser123/todo-app-with-react)
 - Live Site URL: [Add live site URL here](https://dawser123.github.io/todo-app-with-react/)
-
-## My process
 
 ### Built with
 
