@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import classes from './Button.module.css'
-const Button = ({ onButtonClick, className, activeClassName }) => {
+const Button = ({ onButtonClick, className}) => {
 	const [activeButton, setActiveButton] = useState('All')
 	const buttonNames = ['All', 'Active', 'Completed']
 	const handleButtonClick = buttonName => {
