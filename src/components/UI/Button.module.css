@@ -1,3 +1,7 @@
+.button-status {
+	padding: 0 0.8em;
+	color: var(--light-dark-grayish-blue);
+}
 .active {
 	color: var(--primary-blue);
 }

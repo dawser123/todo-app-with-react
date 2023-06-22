@@ -1,29 +1,45 @@
-import React, { useState } from 'react'
+import React from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import { todoActions } from '../store/todo-slice'
 import ToDo from './ToDo'
 import Input from './Input'
 import Button from './UI/Button'
 import classes from './Header.module.css'
 import Moon from '../assets/Icons/Moon.svg'
 import Sun from '../assets/Icons/Sun.svg'
+
 const Header = ({ theme, toggleTheme }) => {
-	const [toDos, setToDos] = useState([])
-	const [taskLeft, setTaskLeft] = useState(0)
-	const [activeButton, setActiveButton] = useState('All')
+	const todos = useSelector(state => state.todo.todos)
+	const taskLeft = useSelector(state => state.todo.taskLeft)
+	const activeButton = useSelector(state => state.todo.activeButton)
+	const dispatch = useDispatch()
+
 	const addToDo = todo => {
-		setToDos([...toDos, { id: Math.random().toString(), task: todo, completed: false }])
-		setTaskLeft(prevCount => prevCount + 1)
+		const newTodo = {
+			id: Math.random().toString(),
+			task: todo,
+			completed: false,
+		}
+		dispatch(todoActions.addTodo(newTodo))
 	}
+
 	const toggleComplete = id => {
-		setToDos(toDos.map(todo => (todo.id === id ? { ...todo, completed: !todo.completed } : todo)))
+		dispatch(todoActions.toggleComplete(id))
 	}
+
 	const deleteToDo = id => {
-		setToDos(toDos.filter(todo => todo.id !== id))
-		setTaskLeft(prevCount => prevCount - 1)
+		dispatch(todoActions.deleteTodo(id))
 	}
+
 	const handleButtonClick = buttonName => {
-		setActiveButton(buttonName)
+		dispatch(todoActions.setActiveButton(buttonName))
 	}
-	const filteredToDos = toDos.filter(todo => {
+
+	const clearCompleted = () => {
+		dispatch(todoActions.clearCompleted())
+	}
+
+	const filteredToDos = todos.filter(todo => {
 		if (activeButton === 'All') {
 			return true
 		} else if (activeButton === 'Active') {
@@ -32,10 +48,7 @@ const Header = ({ theme, toggleTheme }) => {
 			return todo.completed
 		}
 	})
-	const clearCompleted = () => {
-		setToDos(toDos.filter(todo => !todo.completed))
-		setTaskLeft(toDos.filter(todo => !todo.completed).length)
-	}
+
 	return (
 		<header className={theme === 'dark' ? classes.dark : ''}>
 			<div className={classes.container}>
@@ -51,26 +64,26 @@ const Header = ({ theme, toggleTheme }) => {
 						<ToDo key={item.id} task={item} deleteToDo={() => deleteToDo(item.id)} toggleComplete={toggleComplete} />
 					))}
 				</ul>
-				<div className={classes['todo-list-container']}>
-					<p>{taskLeft} item left</p>
-					<div className={classes['todo-status-box']}>
-						<Button
-							className={classes['todo-status-box-btn']}
-							activeButton={activeButton}
-							onButtonClick={handleButtonClick}
-						/>
-					</div>
-					<button className={classes['clear-button']} type="button" onClick={clearCompleted}>
-						Clear completed
-					</button>
-				</div>
-				<div className={classes['todo-status-box']}>
-					<Button
-						className={classes['todo-status-box-btn']}
-						activeButton={activeButton}
-						onButtonClick={handleButtonClick}
-					/>
-				</div>
+				{taskLeft ? (
+					<>
+						<div className={classes['todo-list-container']}>
+							<p>{taskLeft} item left</p>
+							<div className={classes['todo-status-box']}>
+								<Button activeButton={activeButton} onButtonClick={handleButtonClick} />
+							</div>
+							<button className={classes['clear-button']} type="button" onClick={clearCompleted}>
+								Clear completed
+							</button>
+						</div>
+						<div className={classes['todo-status-box']}>
+							<div className={classes['todo-status-box-btn']}>
+								<Button activeButton={activeButton} onButtonClick={handleButtonClick} />
+							</div>
+						</div>
+					</>
+				) : (
+					''
+				)}
 			</div>
 		</header>
 	)

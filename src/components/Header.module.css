@@ -44,13 +44,7 @@ ul {
 	box-shadow: 0 19px 32px 12px rgba(0, 0, 0, 0.1);
 	background-color: var(--background);
 }
-.todo-status-box-btn {
-	padding: 0 0.8em;
-	color: var(--light-dark-grayish-blue);
-}
-.todo-status-box-btn.active {
-	color: var(--primary-blue);
-}
+
 .clear-button {
 	color: var(--light-dark-grayish-blue);
 }
