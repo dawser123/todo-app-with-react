@@ -43,8 +43,3 @@ Users should be able to:
 ### What I learned
 For this challenge I decided to use react to practice my skill.
 
-
-## Author
-- Website - [Add your name here](https://www.your-site.com)
-- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
-- Twitter - [@yourusername](https://www.twitter.com/yourusername)
